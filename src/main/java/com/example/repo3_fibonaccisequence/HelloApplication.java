@@ -4,27 +4,26 @@ import java.util.Scanner;
 public class HelloApplication {
     public static void main(String[] args) {
 
-        Scanner fibonacci = new Scanner(System.in);
+        Scanner fibonacci = new Scanner(System.in); //Variable initialization
 
         System.out.println("Enter the number of terms of the Fibonacci series: ");
-        int n = fibonacci.nextInt();
+        int Sequence = fibonacci.nextInt();  //Declare an integer variable and save my initialized variable
 
-        if (n <= 0) {
+        //Conditional
+        if ( Sequence <= 0) {
             System.out.println("The number of terms must be greater than 0.");
         } else {
-            int[] fibonacciSeries = new int[n];
+            int[] fibonacciSeries = new int[Sequence]; //Initialize an array and assign a name
 
-            if (n > 0) fibonacciSeries[0] = 0;
-            if (n > 1) fibonacciSeries[1] = 1;
+            if (Sequence > 1) fibonacciSeries[1] = 1;  //Conditional
 
 
-            for (int i = 2; i < n; i++) {
-                fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+            for (int i = 2; i < Sequence; i++) {    // Make a loop
+                fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2]; //Fibonacci formula
             }
 
-
             System.out.println("Fibonacci series:");
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < Sequence; i++) {       //Make a loop to print the results of "i"
                 System.out.print(fibonacciSeries[i] + " ");
             }
         }
